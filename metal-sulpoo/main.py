@@ -1,9 +1,11 @@
 from models.funcionario import Funcionario
-from models.setor import setor
+from models.setor import Setor
 
-setor1 = setor(1, "TA")
-funcionario1 = Funcionario(1, "Joaquim", "Dev", 5500.00, "TI")
-funcionario1.apresentar()
+setor1 = Setor(1, "TA")
+funcionario1 = Funcionario(1, "Joaquim", "Dev", -5500.00,setor1)
+print("-"*30)
+setor1.nome = "Tech"
+setor1.apresentar
 
 #COMPOSIÇÃO
 #funcionario possui um setor

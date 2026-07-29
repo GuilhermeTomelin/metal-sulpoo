@@ -14,3 +14,8 @@ class Setor:
         print("=== SETOR ===")
         print(f"ID:{self.id}")
         print(f"Nome Setor:{self.nome}")
+
+    @nome.setter
+    def nome(self, novo_nome):#
+        if not novo_nome.strip():
+            raise ValueError ("Coloca o nome")
