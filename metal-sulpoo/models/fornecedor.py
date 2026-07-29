@@ -18,4 +18,10 @@ class Fornecedor:
     def cnpj(self):
         return self.__cnpj
 
+    @property
+    def telefone(self):
+        return self.__telefone
+    @property
+    def email(self):
+        return self.__email
     
