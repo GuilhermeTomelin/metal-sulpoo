@@ -35,10 +35,10 @@ class Funcionario:
     @property
     def salario(self):
             return self.__salario
+    @property
+    def aumentar_salario(self):
+        return self.aumentar_salario
 
-    #Setters
-    #valor único de referência e não mutavel
-    #nomedoatributo.setter
     @nome.setter
     def nome(self,nome):
         self.__nome = nome
@@ -53,8 +53,8 @@ class Funcionario:
             raise ValueError(f"O salário {valor} não pode ser negativo")
         self.__salario = valor
 
+    @aumentar_salario.setter
     def aumentar_salario(self, valor):
          if valor <= 0:
               raise ValueError(f"O aumento {valor} deve ser maior que zero")
          self.__salario += valor
-         
