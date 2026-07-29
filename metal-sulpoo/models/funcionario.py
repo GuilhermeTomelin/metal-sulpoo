@@ -1,13 +1,19 @@
 class Funcionario:
-    def __init__(self, id, nome, cargo, salario, setor):
+    def __init__(self, id, nome, cargo, salario,setor):
         self.__id = id
         self.__nome = nome
         self.__cargo = cargo
         self.__salario = salario
-        self.__setor =setor
+        self.__setor = setor
 
     def apresentar(self):
-        print(f"id: {self.__id}, Nome: {self.__nome}, Cargo: {self.__cargo}, Salário: {self.__salario}, Setor:{self.__setor}")
+        print("==== DADOS DO FUNCIONÁRIO ====")
+        print("ID: ",self.__id)
+        print("NOME: ",self.__nome)
+        print("CARGO: ",self.__cargo)
+        print("SALÁRIO: R$",self.__salario)
+        print("Setor: ", self.setor.nome)
+        
     def aumentar_salario(self, percentual):
         aumento = self.__salario * (percentual/100)
         self.__salario += aumento
@@ -15,36 +21,34 @@ class Funcionario:
         self.__cargo = novo_cargo
     @property
     def setor(self):
-        return self.__setor
-    
-    def id(self):
-        return self.__id
+         return self.__setor
 
+    @property
+    def id(self):
+        return self.__id #apenas mostrar
     @property
     def nome(self):
-        return self.__nome
-
+            return self.__nome
     @property
     def cargo(self):
-        return self.__cargo
-
+            return self.__cargo
     @property
     def salario(self):
-        return self.__salario
+            return self.__salario
 
-    #setters
+    #Setters
+    #valor único de referência e não mutavel
+    #nomedoatributo.setter
     @nome.setter
-    def nome(self, nome):
+    def nome(self,nome):
         self.__nome = nome
-
     @cargo.setter
     def cargo(self, novo_cargo):
         if novo_cargo =="":
-            raise ValueError("O cargo não pode estar vazio!")
+             raise ValueError("O cargo não pode estar vazio!")
         self.__cargo = novo_cargo
-
     @salario.setter
-    def salario(self, valor):
+    def salario(self,valor):
         if valor <0:
             raise ValueError(f"O salário {valor} não pode ser negativo")
         self.__salario = valor
