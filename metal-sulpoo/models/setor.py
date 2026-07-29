@@ -16,6 +16,7 @@ class Setor:
         print(f"Nome Setor:{self.nome}")
 
     @nome.setter
-    def nome(self, novo_nome):#
+    def nome(self, novo_nome):
         if not novo_nome.strip():
             raise ValueError ("Coloca o nome")
+        self.__nome = novo_nome
