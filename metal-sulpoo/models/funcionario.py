@@ -52,3 +52,9 @@ class Funcionario:
         if valor <0:
             raise ValueError(f"O salário {valor} não pode ser negativo")
         self.__salario = valor
+
+    def aumentar_salario(self, valor):
+         if valor <= 0:
+              raise ValueError(f"O aumento {valor} deve ser maior que zero")
+         self.__salario += valor
+         
